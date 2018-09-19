@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+    api:
+        build: .
+        container_name: nfe.api
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://*:80
+        ports:
+            - "81:80"
+        volumes:
+            - "/home/yreis/estudo/AspNetWebApi:/app"
+        networks:
+            - dev_net
+
+networks:
+    dev_net:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+            - subnet: 172.19.0.0/24
+              gateway: 172.19.0.1
