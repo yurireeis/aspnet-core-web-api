@@ -1,0 +1,17 @@
+- kestrel acts a server
+- controllers classes must derives from ControllerBase
+- the route template is defined by classname without suffix (i.e: ValuesController = /values)
+- parameters in funcion that isn't in the route is considered query params
+- the precedence order of parameters is important, because the first parameter will be the route 
+  parameter (if you don't set the parameter as QueryParameter obviusly)
+- [FromBody] attribute must be typed with class, using their properties to match payload expectations
+- when you set a data annotation, DON'T FORGET about ModelState validation
+- ActionResult is used to produce responses
+- Content Negotiation: when client requests some information to server and server gives (if it can)
+  the requested info for client
+- The default content response is form-data
+- to set input formatters, you need to set options by AddMvc() method. Thus, you need to set on headers
+  the key Accept and the value application/xml to bring the xml response
+- if you want to protect your response setting only one way to respond, you cat put Produces attribute
+  in respective method
+- to use DbContext you must add AddDbContext on ConfigureServices in Startup

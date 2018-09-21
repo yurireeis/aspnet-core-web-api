@@ -19,7 +19,7 @@
     },
     "AspNetWebApi": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "api/values",
       "applicationUrl": "https://localhost:80",
       "environmentVariables": {
