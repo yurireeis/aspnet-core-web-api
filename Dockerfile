@@ -6,6 +6,14 @@ RUN mkdir "/${APP_PATH}/"
 
 WORKDIR "/${APP_PATH}/"
 
+COPY Program.cs .
+
+COPY Startup.cs .
+
+COPY *.csproj .
+
+COPY global.json .
+
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 RUN chmod +x /usr/bin/entrypoint.sh

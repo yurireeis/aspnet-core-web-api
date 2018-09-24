@@ -21,20 +21,20 @@
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/values",
-      "applicationUrl": "https://localhost:80",
+      "applicationUrl": "https://localhost:8081",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://*:80"
+        "ASPNETCORE_URLS": "http://*:8081"
       }
     },
     "Docker": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/values",
-      "applicationUrl": "https://localhost:5000",
+      "applicationUrl": "https://localhost:81",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://*:5000"
+        "ASPNETCORE_URLS": "http://*:81"
       }
     }
   }

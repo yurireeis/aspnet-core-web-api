@@ -7,9 +7,11 @@ services:
         environment:
             - DLL_PATH=bin/Debug/netcoreapp2.1
         ports:
-            - "81:5000"
+            - "81:81"
         volumes:
-            - "/home/yreis/estudo/AspNetWebApi:/app"
+            - /home/yreis/estudo/AspNetWebApi/Controllers:/app/Controllers
+            - /home/yreis/estudo/AspNetWebApi/Data:/app/Data
+            - /home/yreis/estudo/AspNetWebApi/Properties:/app/Properties
         networks:
             - dev_net
 
