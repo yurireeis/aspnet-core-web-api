@@ -10,8 +10,10 @@ services:
             - "81:81"
         volumes:
             - /home/yreis/estudo/AspNetWebApi/Controllers:/app/Controllers
-            - /home/yreis/estudo/AspNetWebApi/Data:/app/Data
+            - /home/yreis/estudo/AspNetWebApi/Core:/app/Core
+            - /home/yreis/estudo/AspNetWebApi/Persistence:/app/Persistence
             - /home/yreis/estudo/AspNetWebApi/Properties:/app/Properties
+            - /home/yreis/estudo/AspNetWebApi/Migrations:/app/Migrations
         networks:
             - dev_net
 
