@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AspNetWebApi.Core.Domain;
+using AspNetWebApi.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspNetWebApi.Persistence.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly DbContext Context;
-
-        public Repository(DbContext context) { Context = context; }
+        protected readonly IChatContext Context;
+        public Repository(IChatContext context) { Context = context; }
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate) => Context.Set<TEntity>().Where(predicate);
 

@@ -3,9 +3,10 @@ version: '2'
 services:
     api:
         build: .
-        container_name: nfe.api
+        container_name: rpg.api
         environment:
             - DLL_PATH=bin/Debug/netcoreapp2.1
+            - DB_PASS=yourStrong(!)Password
         ports:
             - "81:81"
         volumes:
@@ -14,6 +15,19 @@ services:
             - /home/yreis/estudo/AspNetWebApi/Persistence:/app/Persistence
             - /home/yreis/estudo/AspNetWebApi/Properties:/app/Properties
             - /home/yreis/estudo/AspNetWebApi/Migrations:/app/Migrations
+        networks:
+            - dev_net
+    db:
+        image: microsoft/mssql-server-linux:latest
+        container_name: rpg.db
+        environment:
+            - SA_PASSWORD=yourStrong(!)Password
+            - MSSQL_PID=Express
+            - ACCEPT_EULA=Y
+        ports:
+            - "1433:1433"
+        volumes:
+            - /home/yreis/estudo/AspNetWebApi/.tmp:/var/opt/mssql
         networks:
             - dev_net
 
