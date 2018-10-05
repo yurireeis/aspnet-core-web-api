@@ -12,8 +12,9 @@ namespace AspNetWebApi.Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string PASS = Environment.GetEnvironmentVariable("DB_PASS");
-            string CONN_STRING = $"Server=localhost;Database=rpg;User Id=sa;{PASS};";
+            string HOST = Environment.GetEnvironmentVariable("SQL_HOST");
+            string PASS = Environment.GetEnvironmentVariable("SA_PASSWORD");
+            string CONN_STRING = $"Server={HOST};Database=rpg;User Id=sa;Password={PASS}];";
             optionsBuilder.UseSqlServer(CONN_STRING);
         }
 

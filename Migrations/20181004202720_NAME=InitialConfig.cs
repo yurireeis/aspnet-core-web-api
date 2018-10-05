@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AspNetWebApi.Migrations
 {
-    public partial class InitialSetup : Migration
+    public partial class NAMEInitialConfig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

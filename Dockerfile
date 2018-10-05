@@ -14,8 +14,12 @@ COPY *.csproj .
 
 COPY global.json .
 
-COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY assets/entrypoint.sh /usr/bin/entrypoint
 
-RUN chmod +x /usr/bin/entrypoint.sh
+COPY assets/migrate.sh /usr/bin/migrate
 
-ENTRYPOINT [ "entrypoint.sh" ]
+RUN chmod +x /usr/bin/entrypoint
+
+RUN chmod +x /usr/bin/migrate
+
+ENTRYPOINT [ "entrypoint" ]

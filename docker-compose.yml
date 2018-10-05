@@ -4,30 +4,33 @@ services:
     api:
         build: .
         container_name: rpg.api
+        depends_on:
+            - db
         environment:
             - DLL_PATH=bin/Debug/netcoreapp2.1
-            - DB_PASS=yourStrong(!)Password
+            - SA_PASSWORD=yourStrongPassword1234GoesHere
+            - SQL_HOST=rpg.db
         ports:
             - "81:81"
         volumes:
             - /home/yreis/estudo/AspNetWebApi/Controllers:/app/Controllers
             - /home/yreis/estudo/AspNetWebApi/Core:/app/Core
+            - /home/yreis/estudo/AspNetWebApi/Migrations:/app/Migrations
             - /home/yreis/estudo/AspNetWebApi/Persistence:/app/Persistence
             - /home/yreis/estudo/AspNetWebApi/Properties:/app/Properties
-            - /home/yreis/estudo/AspNetWebApi/Migrations:/app/Migrations
         networks:
             - dev_net
+
     db:
         image: microsoft/mssql-server-linux:latest
         container_name: rpg.db
         environment:
-            - SA_PASSWORD=yourStrong(!)Password
-            - MSSQL_PID=Express
+            - SA_PASSWORD=yourStrongPassword1234GoesHere
             - ACCEPT_EULA=Y
         ports:
             - "1433:1433"
         volumes:
-            - /home/yreis/estudo/AspNetWebApi/.tmp:/var/opt/mssql
+            - /home/yreis/estudo/AspNetWebApi/.temp:/var/opt/mssql
         networks:
             - dev_net
 

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspNetWebApi.Migrations
 {
     [DbContext(typeof(ChatContext))]
-    [Migration("20181003203529_InitialSetup")]
-    partial class InitialSetup
+    [Migration("20181004202720_NAME=InitialConfig")]
+    partial class NAMEInitialConfig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

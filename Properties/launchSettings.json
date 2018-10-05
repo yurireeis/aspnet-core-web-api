@@ -21,10 +21,10 @@
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/values",
-      "applicationUrl": "https://localhost:8082",
+      "applicationUrl": "https://localhost:8083",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://*:8082"
+        "ASPNETCORE_URLS": "http://*:8083"
       }
     },
     "Docker": {
